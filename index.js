@@ -19,7 +19,7 @@ if (!fs.existsSync(outputDirectory)) {
 
 // URL of the website you want to scrape
 const url =
-  "https://www.marketsandmarkets.com/Market-Reports/concrete-admixtures-additives-market-768.html";
+  "https://www.marketsandmarkets.com/Market-Reports/green-preservatives-market-15066985.html";
 //Regex for extracting filename
 const regex = /Reports\/(.*?)\-market/;
 const match = url.match(regex);
@@ -89,7 +89,6 @@ axios
     });
     //Select the "Market Players" <p> that is adjacent to the <h3> containing "Players:"
     const marketPlayersParagraph = playersH3.next();
-    console.log(marketPlayersParagraph.text().trim());
     //Append content from "Key Market Players" section and add title/keyword
     fs.appendFileSync(
       filePath,
